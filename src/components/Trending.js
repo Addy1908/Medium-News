@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import '../css/index.css'
-import { Oval } from "react-loader-spinner";
+// import logo from "../css/logo.png"
+// import { Oval } from "react-loader-spinner";
 export default function Trending() {
   const [news, setNews] = useState([]);
 
@@ -21,6 +22,8 @@ export default function Trending() {
       
       });
   }, []);
+
+
   // // console.log(news.articles.author)
     
   return (
@@ -36,10 +39,11 @@ export default function Trending() {
         (<div class="lds-hourglass"></div>)
           :
 
-       ( news.slice(2,7).map((response)=>(
+       ( news.slice(13,18).map((response)=>(
       <div className='one hover:scale-110
       ease-out duration-300
-      relative'>
+      relative' style={{border:'1px solid black',borderRadius:'10px'}}>
+        <img className="trend-img" src={response.urlToImage} alt="" />
         <div className='trend-one-head'>{response.publishedAt}</div>
         <a href={response.url}><div className='trend-one'>{response.title}</div></a>
         
@@ -55,8 +59,9 @@ export default function Trending() {
 
 
     </div>
-    <div style={{ borderTop: "1px solid #d4cccc ", marginLeft: 10, marginRight: 10,marginTop: 20 }}></div>
+    <div style={{ borderTop: "1px solid #d4cccc ", marginLeft: 10, marginRight: 10,marginTop: 110 }}></div>
 
     </>
   )
 }
+

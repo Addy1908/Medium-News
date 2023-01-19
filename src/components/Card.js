@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import logo from "../css/logo.png";
 import axios from "axios";
-import { Oval } from "react-loader-spinner";
+// import { Oval } from "react-loader-spinner";
 
 export default function Card() {
   const [news, setNews] = useState([]);
@@ -23,7 +23,8 @@ export default function Card() {
         let genders = Object.values(res.data);
         let newsdata = genders[2];
         // console.log(newsdata[0].author)
-        setNews(newsdata);
+        setNews(newsdata);  // iska mtlb hai hi setNews jo method hai useState ka usmein jo array pass kiya hai 
+        // usmein store ho jayega or hum ushe news variable ke through use kar sakte hai us array ka name ab news hai 
       });
   }, []);
   // // console.log(news.articles.author)
@@ -46,11 +47,11 @@ export default function Card() {
                     <div className="card-horizontal">
                       <div className="card-body body-text">
                         <h5 className="card-title author">
-                          
-                          {response.author} : {response.publishedAt}
+
+                          {response.source.name} 
 
                         </h5>
-                        <p className="card-text">
+                        <p className="card-text" style={{marginTop:'10px'}}>
                         
                           Title:<br></br>
                           {response.title}
@@ -66,10 +67,10 @@ export default function Card() {
                       </div>
                       <div
                         className="img-square-wrapper image-div"
-                        style={{ marginLeft: "60px" }}
+                        style={{ marginLeft: "60px",marginRight:'10px' }}
                       >
                         <img
-                          className="image"
+                          className="image" style={{borderRadius:'20%'}}
                           src={response.urlToImage}
                           alt="Card"
                         />
@@ -89,6 +90,7 @@ export default function Card() {
         
 
         <hr style={{ opacity: "0.1" }}></hr>
+
         <div className="ads">
           <div className="dispaly">
             <h6 className="adsHead">Discover more on what matters to you.</h6>
@@ -128,7 +130,7 @@ export default function Card() {
         </div>
         </div>
 
-        
+        {/* <div style={{ borderTop: "1px solid #d4cccc ", marginLeft: 10, marginRight: 10,marginTop: 110 }}></div> */}
       </div>
       {/* <div style={{ borderTop: "2px solid black ", marginLeft: 400, marginRight: 200 }}></div> */}
     </>

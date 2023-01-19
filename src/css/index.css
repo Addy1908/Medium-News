@@ -107,6 +107,19 @@ font-weight: 500;
 
     border-radius: 25px;
     width: 201px;
+    margin-left: 50%;
+}
+.btn-home{
+    background-color: #191b1b;
+    color: white;
+    margin: 30px;
+    padding: 12px;
+    width: 50%;
+    /* border: 2px solid; */
+
+    border-radius: 25px;
+    width: 201px;
+    
 }
 
 .btn-nav{
@@ -152,6 +165,8 @@ font-weight: 500;
 .image{
     height: 200px;
     width: 200px;
+    margin-top: 30%;
+    /* opacity: 0.8; */
 }
 
 .image-div{
@@ -171,8 +186,8 @@ font-weight: 500;
 .card-size{
    
     /* border: 2px solid black; */
-    width: 75%;
-    height: 7%;
+    width: 85%;
+    height: 6%;
     background-color: rgb(255 249 249);
     margin-left: 60px;
 
@@ -256,7 +271,7 @@ ul li {
     /* border: 260 solid black; */
     display: flex;
     justify-content: space-around;
-    height: 10%;
+    height: 11%;
 }
 
 .trend-head{
@@ -264,14 +279,14 @@ ul li {
     /* border: 260 solid black; */
     display: flex;
     justify-content: space-around;
-    height: 10%;
+    height: 11%;
     font-weight: 700;
     font-size: 20px;
 }
 .one{
     /* border: 2px solid black; */  
     width: 209px;
-    height: 220px;
+    height: 370px;
     padding: 21px;
     /* transition-property: width,height;
     transition-delay: .5s;
@@ -280,8 +295,8 @@ ul li {
 
 .one:hover{
     /* translate: 100px 100px; */
-    /* width: 220px;
-    height: 250px; */
+    /* width: 220px; */
+    /* height: 250px; */
     background-color: rgb(227, 252, 252);
     font-style: oblique;
    
@@ -299,6 +314,15 @@ ul li {
 .trend-one{
     font-weight: 100;
     margin-top: 20px;
+}
+
+
+.trend-img{
+    width: 170px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20%;
 }
 
 
