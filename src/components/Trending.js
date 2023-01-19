@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import '../css/index.css'
+import { Oval } from "react-loader-spinner";
 export default function Trending() {
   const [news, setNews] = useState([]);
 
@@ -25,22 +26,29 @@ export default function Trending() {
   return (
     <>
     <div className='trend-head'>Trending News</div>
-    <div className='trending'>
-      
-      {
 
-        news.slice(2,7).map((response)=>(
-      <div className='one'>
+ 
+    <div className='trending'>
+    
+
+      {
+        news.length===0?
+        (<div class="lds-hourglass"></div>)
+          :
+
+       ( news.slice(2,7).map((response)=>(
+      <div className='one hover:scale-110
+      ease-out duration-300
+      relative'>
         <div className='trend-one-head'>{response.publishedAt}</div>
         <a href={response.url}><div className='trend-one'>{response.title}</div></a>
-        {/* <div className='card-btn'>
-        <button className="but">Programming</button>
         
-        </div> */}
      
       </div>
       ))
+       )
       }
+    
 
 
 

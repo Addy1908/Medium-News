@@ -14,6 +14,12 @@ export default function Card() {
       .then((res) => {
         console.table(res.data);
 
+        // generally API's returns array of objects which can be directly accessible
+        // but in this API,it returns object of array,so firstly it have to find the array which contains the data
+        // so i have used Object.values() method which return the value from key-value pair of the object.
+        // the array which contains all the data is stored on index no 2 so I have used genders[2]
+        // finally newsdata contains the array which can be traverse using map()  
+
         let genders = Object.values(res.data);
         let newsdata = genders[2];
         // console.log(newsdata[0].author)
@@ -29,15 +35,7 @@ export default function Card() {
 
           {
           news.length === 0 ?
-          (<div className="flex justify-center">
-            <Oval
-              heigth="100"
-              width="100"
-              color="grey"
-              secondaryColor="grey"
-              ariaLabel="loading"
-            />
-          </div>)
+          (<div class="lds-hourglass"></div>)
           :
          ( 
             news.map((response) => (
@@ -48,17 +46,17 @@ export default function Card() {
                     <div className="card-horizontal">
                       <div className="card-body body-text">
                         <h5 className="card-title author">
+                          
                           {response.author} : {response.publishedAt}
+
                         </h5>
                         <p className="card-text">
-                          {/* Some quick example text to build on the card title and<br></br>
-              make up the bulk of the card's content. */}
+                        
                           Title:<br></br>
                           {response.title}
                         </p>
                         <p className="card-text text2">
-                          {/* Some quick example text to build on the card title and<br></br>
-              make up the bulk of the card's content. */}
+                          
                           Description:<br></br>
                           {response.content}
                         </p>
@@ -137,62 +135,3 @@ export default function Card() {
   );
 }
 
-// {/* <div className="video-container">
-//             <div className="sub">
-//               <div className="heading">
-//                 <span>
-//                   <h6 className="name">Author name</h6>
-//                 </span>
-//                 <span>
-//                   <p className="time">Published At</p>
-//                 </span>
-//               </div>
-//               <h3 className="title">title</h3>
-//               <p className="content">dfghjdfghjllhwjbCJWBHCCWFGHJM</p>
-//             </div>
-//             <div className="right">
-//               <img
-//                 src={logo}
-//                 className="img3"
-//                 alt="img"
-//                 style={{ width: "80px", height: "80px" }}
-//               />
-//             </div>
-//           </div> */}
-
-// news.map((response)=>(
-
-//   <div className="container-fluid card-size">
-//     <div className="row">
-//       <div className="col-12 mt-3">
-//         <div className="card">
-//           <div className="card-horizontal">
-//             <div className="card-body body-text">
-//               <h5 className="card-title author">{response.author}  :  {response.publishedAt}</h5>
-//               <p className="card-text">
-//                 {/* Some quick example text to build on the card title and<br></br>
-//                 make up the bulk of the card's content. */}
-//                 Title:<br></br>
-//                 {response.title}
-//               </p>
-//               <p className="card-text text2">
-//                 {/* Some quick example text to build on the card title and<br></br>
-//                 make up the bulk of the card's content. */}
-//                 Description:<br></br>
-//                 {response.content}
-//               </p>
-//               <a href={response.url}><button className='btn'>Start Reading</button></a>
-//             </div>
-//             <div className="img-square-wrapper image-div" style={{marginLeft:'60px'}}>
-//               <img
-//                 className="image"
-//                 src={response.urlToImage}
-//                 alt="Card"
-//               />
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-//    ))

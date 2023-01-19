@@ -2,6 +2,10 @@
     margin: 0px;
     padding: 0px;
 }
+
+
+
+
 /* navigation*/
 #navbar{
     display: flex;
@@ -30,12 +34,6 @@ font-weight: 500;
     /* text-decoration: none; */
     text-decoration-line: none;
 }
-/* #navbar ul li a:hover{
-    color: rgb(186, 240, 240);
-    background-color: white;
-    text-decoration: none;
-
-} */
 
 
 
@@ -60,21 +58,11 @@ font-weight: 500;
     margin-left: 67px;
     margin-top: 19px;
 }
+
 #logo img{
     height: 66px;
     width: 85px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* home section styling*/
 #home{
@@ -142,14 +130,10 @@ font-weight: 500;
     border-radius: 15px;
 }
 
-/* .cont{
-    display: flex;
-    margin: auto;
-    justify-content: center;
-} */
 
 
-/* cards page */
+
+/* cards page  */
 
  .card-horizontal {
     /* border: 2px solid black; */
@@ -250,10 +234,7 @@ font-weight: 600;
 }
 
 
-/* .foot{
-    display: flex;
-    flex-wrap: wrap;
-} */
+
 
 ul{
     display: flex;
@@ -264,6 +245,9 @@ ul li {
     padding: 10px;
     font-weight: 100;
 }
+
+
+
 
 /* trending page */
 
@@ -316,3 +300,38 @@ ul li {
     font-weight: 100;
     margin-top: 20px;
 }
+
+
+
+/* loader */
+.lds-hourglass {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 32px solid rgb(37, 36, 36);
+    border-color: rgb(236, 179, 55) transparent rgb(236, 179, 55) transparent;
+    animation: lds-hourglass 1.2s infinite;
+  }
+  @keyframes lds-hourglass {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(900deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(1800deg);
+    }
+  }
